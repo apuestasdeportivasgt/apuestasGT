@@ -15,11 +15,14 @@
     <!-- Favicon para pestañas del navegador -->
     <link rel="icon" type="image/x-icon" href="logo.ico">
     
-    <!-- Ícono para pantalla de inicio en iOS -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+    <!-- Ícono para pantalla de inicio en iOS (simplificado para mejor detección) -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
-    <!-- Ícono para pantalla de inicio en Android -->
-    <link rel="icon" type="image/png" href="icon.png" sizes="192x192">
+    <!-- Ícono alternativo para iOS si el anterior falla (tamaño específico) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+    
+    <!-- Manifiesto PWA para Android (no afecta iOS) -->
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <div class="container">
