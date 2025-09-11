@@ -1,5 +1,5 @@
 // CONFIGURACIONES DE LIGAS Y URL DE LA API
-const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwBnGEYOFWgBy3F_Wkk3SnUBXpsIPGAfCvKiM4xGJfbIWHEZTxwiCpYjmFEvUndOWRiAA/exec";
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbw1Wy3DqkUNP16uS3a8gMdCbqej2EEX33Pqw8SyXrt0zT_FWanbSBMrvXRJtZFkuPaAfA/exec";
 
 // Mapeos de códigos de liga a nombres legibles
 const leagueNames = {
