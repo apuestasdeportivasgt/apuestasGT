@@ -349,7 +349,7 @@ function renderEvent(event, index, leagueCode) {
                 eventDateTime += `<span class="event-live"> - EVENTO EN VIVO</span>`;
                 div.classList.add('in-progress');
             } else if (isStartingSoon) {
-                eventDateTime += `<span class="event-soon"> - Evento por iniciar</span>`;
+                eventDateTime += `<span class="event-soon"> - EVENTO POR INICIAR</span>`;
                 div.classList.add('starting-soon');
             }
             console.log(`[renderEvent] Evento ${event.local} vs ${event.visitante}:`, {
