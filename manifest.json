@@ -1,20 +1,21 @@
 {
   "name": "Análisis de Partidos de FUTBOL",
-  "short_name": "FUTBOL",
-  "description": "Análisis de partidos de fútbol con IA",
-  "start_url": "/",
+  "short_name": "FUTBOL GT",
+  "description": "Análisis de partidos de fútbol con IA - Apuestas Deportivas GT",
+  "start_url": "/apuestasGT/",
+  "scope": "/apuestasGT/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#000000",
+  "theme_color": "#00ff00",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/apuestasGT/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "apple-touch-icon.png",
+      "src": "/apuestasGT/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     }
