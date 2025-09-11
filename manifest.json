@@ -1,6 +1,6 @@
 {
   "name": "Análisis de Partidos de FUTBOL",
-  "short_name": "FUTBOL GT",
+  "short_name": "APUESTAS GT",
   "description": "Análisis de partidos de fútbol con IA - Apuestas Deportivas GT",
   "start_url": "/apuestasGT/",
   "scope": "/apuestasGT/",
