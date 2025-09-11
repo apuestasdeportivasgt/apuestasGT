@@ -1,2 +1,0 @@
-# apuestasGT
-Apuestas Guatemala
