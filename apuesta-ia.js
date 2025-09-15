@@ -214,21 +214,31 @@ function parsePlainText(text, matchData) {
         const probsText = probsMatch[1].trim();
         console.log('[parsePlainText] Texto de probabilidades:', probsText);
 
-        const homeProbMatch = probsText.match(new RegExp(`(?:${matchData.local}:|\\b${matchData.local}\\b).*?(\\d+)%`, 'i'));
-        const drawProbMatch = probsText.match(/(?:Empate:|\bEmpate\b).*?(\d+)%/i);
-        const awayProbMatch = probsText.match(new RegExp(`(?:${matchData.visitante}:|\\b${matchData.visitante}\\b).*?(\\d+)%`, 'i'));
+        // Regex ajustados para capturar "% para [equipo/Empate]" en lugar de "[equipo] %"
+        const homeProbMatch = probsText.match(new RegExp(`(\\d+)%\\s*para\\s*(?:${matchData.local}|el ${matchData.local})`, 'i'));
+        const drawProbMatch = probsText.match(/(\d+)%\s*para\s*el\s*Empate/i);
+        const awayProbMatch = probsText.match(new RegExp(`(\\d+)%\\s*para\\s*(?:${matchData.visitante}|el ${matchData.visitante})`, 'i'));
 
         if (homeProbMatch && drawProbMatch && awayProbMatch) {
             aiProbs.home = parseFloat(homeProbMatch[1]) / 100;
             aiProbs.draw = parseFloat(drawProbMatch[1]) / 100;
             aiProbs.away = parseFloat(awayProbMatch[1]) / 100;
         } else {
-            const percentages = probsText.match(/(\d+)%/g) || [];
-            if (percentages.length >= 3) {
-                aiProbs.home = parseFloat(percentages[0]) / 100;
-                aiProbs.draw = parseFloat(percentages[1]) / 100;
-                aiProbs.away = parseFloat(percentages[2]) / 100;
-            }
+            // Fallback mejorado: buscar todos los % y asignar basándonos en coincidencias cercanas con nombres
+            const lines = probsText.split(/\n+/).filter(line => line.trim());
+            lines.forEach(line => {
+                const pctMatch = line.match(/(\d+)%/);
+                if (pctMatch) {
+                    const pct = parseFloat(pctMatch[1]) / 100;
+                    if (line.match(new RegExp(`\\b${matchData.local}\\b`, 'i'))) {
+                        aiProbs.home = pct;
+                    } else if (line.match(/empate/i)) {
+                        aiProbs.draw = pct;
+                    } else if (line.match(new RegExp(`\\b${matchData.visitante}\\b`, 'i'))) {
+                        aiProbs.away = pct;
+                    }
+                }
+            });
         }
 
         console.log(`[parsePlainText] Probabilidades extraídas: Local=${aiProbs.home}, Empate=${aiProbs.draw}, Visitante=${aiProbs.away}`);
