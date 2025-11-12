@@ -4,7 +4,7 @@ const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxP7qj4cs766lujFDKE6
 // Mapeos de códigos de liga a nombres legibles
 const leagueNames = {
    "esp.1": "LaLiga España",
-    "esp.2": "Segunda España",
+    //"esp.2": "Segunda España",
     "eng.1": "Premier League Inglaterra",
     "eng.2": "Championship Inglaterra",
     "ita.1": "Serie A Italia",
@@ -12,25 +12,25 @@ const leagueNames = {
     "fra.1": "Ligue 1 Francia",
     "ned.1": "Eredivisie Países Bajos",
     "ned.2": "Eerste Divisie Países Bajos",
-    "por.1": "Liga Portugal",
+    //"por.1": "Liga Portugal",
     "mex.1": "Liga MX México",
-    "mex.2": "Liga de Expansión MX",
+    //"mex.2": "Liga de Expansión MX",
     "usa.1": "MLS Estados Unidos",
     "bra.1": "Brasileirão Brasil",
     "gua.1": "Liga Nacional Guatemala",
-    "crc.1": "Liga Promerica Costa Rica",
-    "hon.1": "Honduras LigaNacional",
-    "slv.1": "El Salvador Liga Primera División",
+    //"crc.1": "Liga Promerica Costa Rica",
+    //"hon.1": "Honduras LigaNacional",
+    //"slv.1": "El Salvador Liga Primera División",
     "ksa.1": "Pro League Arabia Saudita",
     "tur.1": "Super Lig de Turquía",
-    "ger.2": "Bundesliga 2 de Alemania",
-    "arg.1": "Liga Profesional de Fútbol de Argentina",
-    "conmebol.sudamericana": "CONMEBOL Sudamericana",
-    "conmebol.libertadores": "CONMEBOL Libertadores",
+    //"ger.2": "Bundesliga 2 de Alemania",
+    //"arg.1": "Liga Profesional de Fútbol de Argentina",
+    //"conmebol.sudamericana": "CONMEBOL Sudamericana",
+    //"conmebol.libertadores": "CONMEBOL Libertadores",
     "chn.1": "Superliga China",
-    "fifa.worldq.conmebol": "Eliminatorias CONMEBOL",
-    "fifa.worldq.concacaf": "Eliminatorias CONCACAF",
-    "fifa.worldq.uefa": "Eliminatorias UEFA"
+    //"fifa.worldq.conmebol": "Eliminatorias CONMEBOL",
+    //"fifa.worldq.concacaf": "Eliminatorias CONCACAF",
+    //"fifa.worldq.uefa": "Eliminatorias UEFA"
 };
 
 // Mapeos de códigos de liga a nombres de hoja de cálculo
