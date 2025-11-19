@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="mobile.css">
     <link rel="stylesheet" href="desktop.css">
-   
-    <!-- Favicon y PWA -->
     <link rel="icon" type="image/x-icon" href="logo.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
@@ -21,10 +19,9 @@
 <body>
     <div class="container">
 
-        <!-- HEADER NUEVO Y BRUTAL -->
+        <!-- HEADER NUEVO ESPECTACULAR -->
         <header class="app-header">
             <div class="header-glow-bar"></div>
-            
             <div class="header-content">
                 <h1 class="main-title">
                     <span class="title-upper">Análisis de Partidos</span>
@@ -32,14 +29,11 @@
                 </h1>
                 <p class="header-subtitle">Pronósticos precisos con Inteligencia Artificial</p>
             </div>
-
             <div class="screw screw-top-left"></div>
             <div class="screw screw-top-right"></div>
         </header>
-        <!-- FIN HEADER -->
 
         <main class="main-grid">
-            <!-- Todo el resto de tu contenido sigue exactamente igual -->
             <section class="card event-card">
                 <header class="card-header">
                     <i class="fas fa-calendar-alt"></i>
@@ -78,17 +72,95 @@
                 </div>
             </template>
 
-            <!-- Local, Visitante, Resultados, IA... (todo igual) -->
-            <!-- (Pego solo el principio para no alargar, pero el resto es idéntico al que me enviaste) -->
-
             <section class="card team-card" id="card-home">
-                <!-- ... contenido igual ... -->
+                <header class="card-header">
+                    <i class="fas fa-home"></i>
+                    <h3>Local</h3>
+                </header>
+                <div class="card-body">
+                    <div class="control-group">
+                        <label for="teamHome">Selecciona el Equipo Local:</label>
+                        <select id="teamHome"></select>
+                    </div>
+                    <div id="formHomeBox">
+                        <div class="team-details">
+                            <div class="stat-section">
+                                <span class="section-title">General</span>
+                                <div class="stat-metrics">
+                                    <span>PJ: --</span>
+                                    <span>Puntos: --</span>
+                                    <span>DG: --</span>
+                                </div>
+                            </div>
+                            <div class="stat-section">
+                                <span class="section-title">Local</span>
+                                <div class="stat-metrics">
+                                    <span>PJ: --</span>
+                                    <span>PG: --</span>
+                                    <span>DG: --</span>
+                                </div>
+                            </div>
+                            <div class="stat-section">
+                                <span class="section-title">Visitante</span>
+                                <div class="stat-metrics">
+                                    <span>PJ: --</span>
+                                    <span>PG: --</span>
+                                    <span>DG: --</span>
+                                </div>
+                            </div>
+                            <div class="stat-section">
+                                <span class="section-title">Datos</span>
+                                <div class="stat-metrics">
+                                    <span>Posición: --</span>
+                                    <span>% de Victorias: --</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+
             <section class="card team-card" id="card-away">
-                <!-- ... contenido igual ... -->
+                <header class="card-header">
+                    <i class="fas fa-plane-departure"></i>
+                    <h3>Visitante</h3>
+                </header>
+                <div class="card-body">
+                    <div class="control-group">
+                        <label for="teamAway">Selecciona el Equipo Visitante:</label>
+                        <select id="teamAway"></select>
+                    </div>
+                    <div id="formAwayBox">
+                        <div class="team-details">
+                            <!-- igual que arriba -->
+                        </div>
+                    </div>
+                </div>
             </section>
+           
             <section class="card result-card">
-                <!-- ... contenido igual ... -->
+                <header class="card-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Resultados y Probabilidades</h3>
+                </header>
+                <div class="card-body">
+                    <div id="details">
+                        <div class="info"><strong>Instrucciones:</strong> Selecciona una liga y los equipos local y visitante para obtener el pronóstico.</div>
+                    </div>
+                    <div class="probabilities-grid">
+                        <div class="probability-tile"><span class="label">Local</span><span class="value" id="pHome">--</span></div>
+                        <div class="probability-tile"><span class="label">Empate</span><span class="value" id="pDraw">--</span></div>
+                        <div class="probability-tile"><span class="label">Visitante</span><span class="value" id="pAway">--</span></div>
+                        <div class="probability-tile"><span class="label">Ambos Anotan</span><span class="value" id="pBTTS">--</span></div>
+                        <div class="probability-tile"><span class="label">Más de 2.5 Goles</span><span class="value" id="pO25">--</span></div>
+                    </div>
+                    <div class="recommendation-box">
+                        <h4 class="rec-title">Pronósticos Destacados</h4>
+                        <div class="rec-suggestion" id="suggestion">
+                            <ul id="suggestion-list"></ul>
+                        </div>
+                    </div>
+                </div>
             </section>
            
             <div class="recommendation-ia-grid">
@@ -121,6 +193,7 @@
             <button class="btn btn-secondary" id="reset">Resetear Todo</button>
         </footer>
     </div>
+
     <script src="config-ligas.js"></script>
     <script src="apuesta-ia.js"></script>
 </body>
